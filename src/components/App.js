@@ -1,17 +1,28 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import Home from "./Home";
+import BudgetForm from "./BudgetForm";
+import RecContainer from "./RecContainer";
+import SignInForm from "./SignInForm";
+import UserContainer from "./UserContainer";
+
+import { Route, Switch, withRouter } from "react-router-dom";
+
 import "./App.css";
-import Welcome from "./Welcome";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        Budget
-        <Welcome />
+        <Switch>
+          <Route path="/signin" render={() => <SignInForm />} />
+          <Route path="/home" render={() => <UserContainer />} />
+          <Route path="/budget" render={() => <BudgetForm />} />
+          <Route path="/recommendation" render={() => <RecContainer />} />
+          <Route path="/" render={() => <Home />} />
+        </Switch>
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
