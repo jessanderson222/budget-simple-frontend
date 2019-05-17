@@ -4,6 +4,7 @@ import BudgetForm from "./BudgetForm";
 import RecContainer from "./RecContainer";
 import SignInForm from "./SignInForm";
 import UserContainer from "./UserContainer";
+import CreateAccountForm from "./CreateAccountForm";
 
 import { Route, Switch, withRouter } from "react-router-dom";
 
@@ -14,6 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
+          <Route path="/create" render={() => <CreateAccountForm />} />
           <Route path="/signin" render={() => <SignInForm />} />
           <Route path="/home" render={() => <UserContainer />} />
           <Route path="/budget" render={() => <BudgetForm />} />
