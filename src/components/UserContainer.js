@@ -4,7 +4,7 @@ class UserContainer extends Component {
   render() {
     return (
       <div>
-        <h3>UserContainer</h3>
+        <h3>Name</h3>
       </div>
     );
   }
