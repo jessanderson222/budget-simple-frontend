@@ -17,7 +17,7 @@ class App extends Component {
         <Switch>
           <Route path="/create" render={() => <CreateAccountForm />} />
           <Route path="/signin" render={() => <SignInForm />} />
-          <Route path="/home" render={() => <UserContainer />} />
+          <Route path="/user" render={() => <UserContainer />} />
           <Route path="/budget" render={() => <BudgetForm />} />
           <Route path="/recommendation" render={() => <RecContainer />} />
           <Route path="/" render={() => <Home />} />
