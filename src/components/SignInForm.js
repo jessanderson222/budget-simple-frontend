@@ -10,25 +10,28 @@ class SignInForm extends Component {
 
   handleChange = e => {
     this.setState({
-      [e.target.label]: e.target.value
+      [e.target.name]: e.target.value
     });
   };
 
   render() {
+    console.log(this.state);
     return (
       <div>
         <h2>Sign In</h2>
-        <form>
+        <form onChange={this.handleChange}>
           <TextField
             label="Email"
             className="sign-in-field"
             placeholder="Email"
+            name="email"
           />
           <br />
           <TextField
             label="Password"
             className="sign-in-field"
             placeholder="Password"
+            name="password"
           />
           <br />
           <br />

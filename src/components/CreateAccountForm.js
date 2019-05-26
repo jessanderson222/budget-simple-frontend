@@ -13,21 +13,23 @@ class CreateAccountForm extends Component {
 
   handleChange = e => {
     this.setState({
-      [e.target.label]: e.target.value
+      [e.target.name]: e.target.value
     });
   };
 
   render() {
+    console.log(this.state);
     return (
       <div>
         <h2>Create A New Account</h2>
-        <form classname="create-account-form">
-          <Grid container spacing={3} className="create-account-grid">
+        <form onChange={this.handleChange} className="create-account-form">
+          <Grid container className="create-account-grid">
             <Grid item xs={3}>
               <TextField
                 label="Username"
                 className="sign-in-field"
                 placeholder="Username"
+                name="username"
               />
             </Grid>
             <Grid item xs={3}>
@@ -35,15 +37,17 @@ class CreateAccountForm extends Component {
                 label="Email"
                 className="sign-in-field"
                 placeholder="Email"
+                name="email"
               />
             </Grid>
           </Grid>
-          <Grid container spacing={2} className="create-account-grid">
+          <Grid container className="create-account-grid">
             <Grid item xs={3}>
               <TextField
                 label="Profile Picture URL"
                 className="sign-in-field"
                 placeholder="URL"
+                name="img_url"
               />
             </Grid>
             <Grid item xs={3}>
@@ -51,6 +55,7 @@ class CreateAccountForm extends Component {
                 label="Password"
                 className="sign-in-field"
                 placeholder="Password"
+                name="password"
               />
             </Grid>
           </Grid>
