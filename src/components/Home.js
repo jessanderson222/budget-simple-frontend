@@ -16,9 +16,16 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h3>home</h3>
-        <Button onClick={this.signInClick}>Sign In</Button>
-        <Button onClick={this.createAccountClick}>Create Account</Button>
+        <h1>Budget App</h1>
+
+        <h3>Sign in to learn how to spend your $Mon-ay$</h3>
+        <br />
+        <Button variant="contained" onClick={this.signInClick}>
+          Sign In
+        </Button>
+        <p onClick={this.createAccountClick}>
+          Don't have an account? Create one here.
+        </p>
       </div>
     );
   }

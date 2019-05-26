@@ -17,7 +17,7 @@ class SignInForm extends Component {
   render() {
     return (
       <div>
-        <h3>Sign In</h3>
+        <h2>Sign In</h2>
         <form>
           <TextField
             label="Email"
