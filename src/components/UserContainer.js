@@ -1,6 +1,17 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
 class UserContainer extends Component {
+  handleRecommendations = e => {
+    e.preventDefault();
+    this.props.history.push("/recommendation");
+  };
+
+  handleCreateBudget = e => {
+    e.preventDefault();
+    this.props.history.push("/budget");
+  };
+
   render() {
     return (
       <div>
@@ -12,12 +23,16 @@ class UserContainer extends Component {
           alt="profile-pic"
         />
         <br />
-        <button>My Recommendations</button>
+        <button onClick={e => this.handleRecommendations(e)}>
+          My Recommendations
+        </button>
         <br />
-        <button>Create a New Budget</button>
+        <button onClick={e => this.handleCreateBudget(e)}>
+          Create a New Budget
+        </button>
       </div>
     );
   }
 }
 
-export default UserContainer;
+export default withRouter(UserContainer);
