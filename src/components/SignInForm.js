@@ -10,31 +10,42 @@ class SignInForm extends Component {
 
   handleChange = e => {
     this.setState({
-      [e.target.label]: e.target.value
+      [e.target.name]: e.target.value
     });
   };
 
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log("submit");
+  };
+
   render() {
+    console.log(this.state);
     return (
       <div>
         <h2>Sign In</h2>
-        <form>
+        <form onSubmit={e => this.handleSubmit(e)}>
           <TextField
             label="Email"
             className="sign-in-field"
             placeholder="Email"
+            name="email"
+            onChange={this.handleChange}
           />
           <br />
           <TextField
             label="Password"
             className="sign-in-field"
             placeholder="Password"
+            name="password"
+            onChange={this.handleChange}
           />
           <br />
           <br />
-          <Button variant="contained" className="sign-in-button">
+          <button className="sign-in-button">Sign up</button>
+          {/* <Button variant="contained" className="sign-in-button">
             Sign In
-          </Button>
+          </Button> */}
         </form>
       </div>
     );
