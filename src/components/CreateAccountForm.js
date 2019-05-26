@@ -17,12 +17,20 @@ class CreateAccountForm extends Component {
     });
   };
 
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log("submit");
+  };
+
   render() {
     console.log(this.state);
     return (
       <div>
         <h2>Create A New Account</h2>
-        <form onChange={this.handleChange} className="create-account-form">
+        <form
+          onSubmit={e => this.handleSubmit(e)}
+          className="create-account-form"
+        >
           <Grid container className="create-account-grid">
             <Grid item xs={3}>
               <TextField
@@ -30,6 +38,7 @@ class CreateAccountForm extends Component {
                 className="sign-in-field"
                 placeholder="Username"
                 name="username"
+                onChange={this.handleChange}
               />
             </Grid>
             <Grid item xs={3}>
@@ -38,6 +47,7 @@ class CreateAccountForm extends Component {
                 className="sign-in-field"
                 placeholder="Email"
                 name="email"
+                onChange={this.handleChange}
               />
             </Grid>
           </Grid>
@@ -48,6 +58,7 @@ class CreateAccountForm extends Component {
                 className="sign-in-field"
                 placeholder="URL"
                 name="img_url"
+                onChange={this.handleChange}
               />
             </Grid>
             <Grid item xs={3}>
@@ -56,12 +67,14 @@ class CreateAccountForm extends Component {
                 className="sign-in-field"
                 placeholder="Password"
                 name="password"
+                onChange={this.handleChange}
               />
             </Grid>
           </Grid>
-          <Button variant="contained" className="sign-in-button">
+          {/* <Button variant="contained" className="sign-in-button">
             Create Account
-          </Button>
+          </Button> */}
+          <button className="sign-in-button">Create Account</button>
         </form>
       </div>
     );
