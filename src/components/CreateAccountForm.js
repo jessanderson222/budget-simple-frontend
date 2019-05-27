@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
+import { withRouter } from "react-router-dom";
 
 class CreateAccountForm extends Component {
   state = {
@@ -20,6 +21,7 @@ class CreateAccountForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     console.log("submit");
+    this.props.history.push("/user");
   };
 
   render() {
@@ -81,4 +83,4 @@ class CreateAccountForm extends Component {
   }
 }
 
-export default CreateAccountForm;
+export default withRouter(CreateAccountForm);

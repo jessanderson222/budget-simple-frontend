@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import { withRouter } from "react-router-dom";
 
 class SignInForm extends Component {
   state = {
@@ -17,6 +18,7 @@ class SignInForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     console.log("submit");
+    this.props.history.push("/user");
   };
 
   render() {
@@ -42,7 +44,7 @@ class SignInForm extends Component {
           />
           <br />
           <br />
-          <button className="sign-in-button">Sign up</button>
+          <button className="sign-in-button">Sign In</button>
           {/* <Button variant="contained" className="sign-in-button">
             Sign In
           </Button> */}
@@ -52,4 +54,4 @@ class SignInForm extends Component {
   }
 }
 
-export default SignInForm;
+export default withRouter(SignInForm);
